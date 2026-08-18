@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0a0712" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data: https://drive.google.com https://*.googleusercontent.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-src https://drive.google.com; base-uri 'none'; form-action 'none'" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <title>NIYATI — Video Editor · Operations Lead · 3D Web</title>
@@ -74,7 +74,7 @@
   .hud{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;
     padding:14px clamp(16px,4vw,44px);font-family:var(--mono);font-size:11px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--ink-mute);
-    backdrop-filter:blur(10px);background:linear-gradient(180deg,rgba(7,5,16,.72),transparent)}
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);background:linear-gradient(180deg,rgba(7,5,16,.72),transparent)}
   .hud b{color:var(--ink);font-weight:700}
   .hud .mut{color:var(--ink-mute)}
   .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:rgba(255,45,85,.6);
@@ -108,6 +108,7 @@
 
   /* sections */
   section.sec{padding:clamp(44px,5.5vw,72px) 0;position:relative;border-bottom:1px solid var(--seam)}
+  .sec--flat{border-bottom:none}
   .sec__tag{font-family:var(--mono);font-size:11px;letter-spacing:.34em;text-transform:uppercase;margin-bottom:12px;color:var(--ink-mute);display:inline-block}
   .sec__h{font-family:var(--disp);font-size:clamp(36px,6.4vw,64px);line-height:1.02;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
   .sec__sub{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);margin-top:10px}
@@ -191,7 +192,7 @@
   /* CTA slab */
   .cta{display:flex;flex-direction:column;gap:12px;margin-top:26px;padding:clamp(30px,5vw,54px) clamp(24px,4.6vw,50px);
     border-radius:20px;background:var(--card);border:1px solid var(--brd);cursor:pointer;position:relative;overflow:hidden;width:100%;text-align:left;
-    appearance:none;-webkit-appearance:none;font:inherit;color:inherit;transition:transform .4s cubic-bezier(.2,.9,.3,1),box-shadow .4s}
+    -webkit-appearance:none;appearance:none;font:inherit;color:inherit;transition:transform .4s cubic-bezier(.2,.9,.3,1),box-shadow .4s}
   .cta::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,45,85,.14),transparent 70%);transform:translateX(-100%);transition:transform .9s}
   .cta:hover{transform:translateY(-5px);box-shadow:0 36px 70px -26px rgba(255,45,85,.5)}
   .cta:hover::after{transform:translateX(100%)}
@@ -205,7 +206,7 @@
   .menu{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
   .btn{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
     color:var(--ink);padding:18px 28px;border-radius:13px;background:var(--card);border:1px solid var(--brd);
-    display:inline-flex;align-items:center;gap:10px;cursor:pointer;appearance:none;-webkit-appearance:none;
+    display:inline-flex;align-items:center;gap:10px;cursor:pointer;-webkit-appearance:none;appearance:none;
     transition:transform .3s,box-shadow .3s,border-color .3s}
   .btn .k{color:var(--ink-mute)}
   .btn:hover{transform:translateY(-4px);border-color:rgba(255,45,85,.55);box-shadow:0 20px 40px -16px rgba(255,45,85,.5)}
@@ -244,7 +245,7 @@
   .work__card::before{top:11px}
   .work__card::after{bottom:11px}
   .work__play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3}
-  .work__play span{width:58px;height:58px;border-radius:50%;background:rgba(10,7,18,.65);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);
+  .work__play span{width:58px;height:58px;border-radius:50%;background:rgba(10,7,18,.65);border:1px solid rgba(255,255,255,.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
     display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;padding-left:4px;transition:transform .3s,background .3s}
   .work:hover .work__play span{transform:scale(1.12);background:var(--red);border-color:var(--red)}
   .work__rank{position:absolute;left:-8px;bottom:34px;z-index:3;font-family:var(--disp);font-size:clamp(96px,9vw,140px);line-height:.82;color:var(--bg);
@@ -256,7 +257,7 @@
 
   /* lightbox */
   .lightbox{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
-    background:rgba(4,2,8,.86);backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:opacity .35s;padding:24px}
+    background:rgba(4,2,8,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:opacity .35s;padding:24px}
   .lightbox.open{opacity:1;pointer-events:auto}
   .lightbox__stage{width:min(960px,92vw);aspect-ratio:16/9;max-height:86vh;border-radius:14px;overflow:hidden;background:#000;
     box-shadow:0 50px 100px -30px rgba(139,92,246,.4)}
@@ -391,7 +392,7 @@
         </button>
       </section>
 
-      <section class="sec" id="connect" style="border-bottom:none">
+      <section class="sec sec--flat" id="connect">
         <div class="sec__tag reveal">◆ 05 — Connect</div>
         <h2 class="sec__h reveal" data-delay="1">Let's connect!</h2>
         <div class="menu">
