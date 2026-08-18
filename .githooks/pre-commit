@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -uo pipefail
+echo "── pre-commit: zero-trust checks ───────────────"
+bash scripts/scan-secrets.sh || exit 1
+bash scripts/lint.sh        || exit 1
+echo "── pre-commit: passed ──────────────────────────"
